@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafedesan Rhino Model | MJ Nyamdavaa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #ffffff; 
+            --card: #f9fafb; 
+            --border: #e5e7eb; 
+            --accent: #4f46e5; 
+            --text: #111827; 
+            --text-dim: #4b5563; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+        body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .back-link { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; margin-bottom: 40px; display: block; font-weight: 500; }
+        .back-link:hover { color: var(--accent); }
+        
+        .project-header { margin-bottom: 60px; }
+        .badge { display: inline-block; padding: 4px 12px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 100px; color: var(--accent); font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); letter-spacing: -0.04em; margin-bottom: 10px; font-weight: 700; color: #000; }
+        
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 32px; }
+        
+        .col-12 { grid-column: span 12; }
+        .col-8 { grid-column: span 8; }
+        .col-4 { grid-column: span 4; }
+
+        .hero-img { width: 100%; border-radius: 20px; margin-bottom: 24px; border: 1px solid var(--border); }
+        h2 { font-size: 1.1rem; margin-bottom: 16px; color: var(--text); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+        p { color: var(--text-dim); font-size: 1rem; margin-bottom: 1rem; }
+        
+        .pill { display: inline-block; background: #fff; border: 1px solid var(--border); padding: 5px 12px; border-radius: 100px; font-size: 0.75rem; color: var(--text-dim); margin: 0 5px 8px 0; font-weight: 500; }
+        
+        .meta-label { color: var(--accent); font-weight: 700; display: block; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; }
+        .meta-val { color: var(--text); font-size: 0.95rem; margin-bottom: 15px; display: block; }
+
+        .nav-footer { margin-top: 40px; display: flex; justify-content: space-between; }
+        .nav-btn { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+        @media (max-width: 768px) { .col-8, .col-4 { grid-column: span 12; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="job-application-site.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="project-header">
+            <div class="badge">Academic Project - ARCH 1216</div>
+            <h1>RAFEDESAN</h1>
+            <p style="color: var(--text-dim); font-size: 1.2rem;">Rhino 3D Model Development</p>
+        </div>
+
+        <div class="bento-grid">
+            <div class="card col-12">
+                <img src="image/cube.jpg" alt="Rafedesan Rhino Model View" class="hero-img">
+                <h2>Rhino Model Overview</h2>
+                <p>The Rafedesan Rhino model served as the primary design and decision-making tool throughout the project, translating conceptual ideas into a precise three-dimensional architectural system. Built at 3/16” = 1’-0” scale, the model was developed to rigorously test spatial relationships, circulation efficiency, and structural logic within the project’s strict academic and technical constraints.</p>
+            </div>
+
+            <div class="card col-4">
+                <h2>Project Meta</h2>
+                <span class="meta-label">Date</span>
+                <span class="meta-val">Spring 2025</span>
+                
+                <span class="meta-label">Role</span>
+                <span class="meta-val">Architectural Designer</span>
+                
+                <span class="meta-label">Location</span>
+                <span class="meta-val">San Francisco Bay Area (Proposed)</span>
+
+                <h2>Skills & Tools</h2>
+                <div style="margin-top: 10px;">
+                    <span class="pill">Rhino 3D Modeling</span>
+                    <span class="pill">Layer & Block Organization</span>
+                    <span class="pill">Axonometric Development</span>
+                    <span class="pill">Digital-to-Physical</span>
+                    <span class="pill">Scale Modeling</span>
+                </div>
+            </div>
+
+            <div class="card col-8">
+                <h2>Modeling Strategy</h2>
+                <p>The Rhino model was constructed with an emphasis on clarity, accuracy, and hierarchy. Major architectural elements—floors, walls, roofs, and circulation—were modeled as distinct layers to allow for rapid iteration and analysis. Wall thicknesses, floor depths, and structural proportions were modeled to reflect realistic construction logic.</p>
+                
+                <p>The sloped site was carefully modeled to scale, allowing the building to sit above grade without excavation. Level changes were resolved digitally through ramps and stair sequences, ensuring full IBC-compliant circulation without the use of elevators.</p>
+            </div>
+
+            <div class="card col-12">
+                <div class="nav-footer">
+                    <a href="job-application-site.html" class="nav-btn">← Back to Portfolio</a>
+                    <a href="project-lighting-study.html" class="nav-btn">First Project →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 0.8rem;">
+        <p>&copy; 2025 MJ Nyamdavaa. All rights reserved.</p>
+    </footer>
+</body>
+</html>

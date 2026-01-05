@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Nyamdavaa | CIS & Design Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: white;
+            --card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #6366f1; /* Modern Indigo */
+            --text-main: #000;
+            --text-dim: #555;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background glow */
+        .glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header Section */
+        header { padding: 100px 0 60px; text-align: left; }
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 100px;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 20px; }
+        .hero-sub { font-size: 1.25rem; color: var(--text-dim); max-width: 700px; }
+
+        /* Bento Grid System */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+        /* Grid Assignments */
+        .col-4 { grid-column: span 4; }
+        .col-6 { grid-column: span 6; }
+        .col-8 { grid-column: span 8; }
+        .col-12 { grid-column: span 12; }
+
+        @media (max-width: 992px) { .col-4, .col-6, .col-8 { grid-column: span 12; } }
+
+        h2 { font-size: 1.4rem; margin-bottom: 12px; font-weight: 600; }
+        p { color: var(--text-dim); font-size: 0.95rem; }
+
+        /* Skills Pills */
+        .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .pill { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 5px 12px; border-radius: 100px; font-size: 0.75rem; color: var(--text-main); }
+
+        /* Links */
+        .btn { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 20px; }
+        .btn:hover { color: #818cf8; }
+
+        .meta { font-size: 0.75rem; color: #52525b; margin-top: 10px; display: block; }
+
+        footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="badge">Seeking Summer 2026 Internships</div>
+            <h1>MJ NYAMDAVAA</h1>
+            <p class="hero-sub">Computer Information Systems Student at TCC. Bridging the gap between <b>Architectural Systems Thinking</b> and <b>Modern Web Development</b>.</p>
+        </header>
+
+        <main class="bento-grid">
+            
+            <div class="card col-8">
+                <div>
+                    <h2>The Intersection of Design & Tech</h2>
+                    <p>I bring a designer's mindset to technical challenges. My background in architecture across three countries allows me to visualize complex digital structures and approach problems with spatial and systematic logic.</p>
+                </div>
+                <div class="pills">
+                    <span class="pill">Problem Solving</span>
+                    <span class="pill">Multilingual (4)</span>
+                    <span class="pill">Project Management</span>
+                </div>
+            </div>
+
+            <div class="card col-4">
+                <h2>Connect</h2>
+                <p>mj.nyamdavaa@tulsacc.edu<br>406-898-8112<br>Stillwater, OK</p>
+                <a href="mailto:mj.nyamdavaa@tulsacc.edu" class="btn">Send an Email →</a>
+            </div>
+
+            <div class="card col-4">
+                <h2>Web Development</h2>
+                <div class="pills">
+                    <span class="pill">HTML5</span><span class="pill">CSS3</span>
+                    <span class="pill">JavaScript</span><span class="pill">Responsive Design</span>
+                </div>
+            </div>
+            <div class="card col-4">
+                <h2>Design & 3D</h2>
+                <div class="pills">
+                    <span class="pill">Rhino 3D</span><span class="pill">Adobe Suite</span>
+                    <span class="pill">Model Making</span><span class="pill">Visual Storytelling</span>
+                </div>
+            </div>
+            <div class="card col-4">
+                <h2>Systems</h2>
+                <div class="pills">
+                    <span class="pill">Database Fundamentals</span><span class="pill">Data Analysis</span>
+                    <span class="pill">POS Operations</span>
+                </div>
+            </div>
+
+            <div class="card col-12"><h2 style="margin:0; opacity: 0.5; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">Selected Architecture & Engineering Projects</h2></div>
+
+            <div class="card col-6">
+                <h2>Biomimetic Yurt Ventilation</h2>
+                <p>Innovative concept for Mongolian yurts inspired by lung structures using CFD analysis (ANSYS Fluent).</p>
+                <span class="meta">Oklahoma State University | 2024-2025</span>
+            </div>
+
+           
+
+            <div class="card col-4">
+                <h2>Bridge</h2>
+                <p>Exploring pedestrian crossings as dystopian urban borders through light and structure.</p>
+                <a href="project-lighting-study.html" class="btn">Explore →</a>
+            </div>
+
+            <div class="card col-4">
+                <h2>Rafedesan Design</h2>
+                <p>Comprehensive floor plans and 3D visualization for mixed-use development concepts.</p>
+                <a href="project-rafedesan.html" class="btn">Explore →</a>
+            </div>
+
+              <div class="card col-4">
+                <h2>Scale Model Photography</h2>
+                <p>This pedestrian bridge design explores the intersection of art and technology through the lens of a dystopian urban border crossing.</p>
+                <a href="project-scale-model.html" class="btn">Explore →</a>
+            </div>
+
+              <div class="card col-4">
+                <h2>Rhino Model</h2>
+                <p>The Rhino model supported early solar and daylight studies, informing façade openings, roof overhangs, and terrace placement.</p>
+                <a href="project-modular-design.html" class="btn">Explore →</a>
+            </div>
+
+            <div class="card col-12"><h2 style="margin:0; opacity: 0.5; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">Professional Experience</h2></div>
+
+            <div class="card col-8">
+                <h2>Staff Reporter | The O'Colly</h2>
+                <p>Conducted research and data analysis for investigative stories. Managed tight deadlines while leveraging multimedia and digital publishing platforms.</p>
+            </div>
+            <div class="card col-4">
+                <h2>Media Manager</h2>
+                <p>Increased engagement by 35% for Freedom By Design through content marketing.</p>
+            </div>
+
+            <div class="card col-6">
+                <h2>Operations Manager | Monarch Agency</h2>
+                <p>Led education consulting with a 98% placement rate and 90% client satisfaction in Ulaanbaatar.</p>
+            </div>
+            <div class="card col-6">
+                <h2>System Proficiency | Cafe Libro</h2>
+                <p>Maintained 99.8% POS accuracy in high-volume environments, demonstrating technical reliability.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 MJ Nyamdavaa | Expected Graduation Aug 2026 | GPA: 3.15</p>
+            <p style="margin-top: 8px;">A.A.S. Computer Information Systems - Tulsa Community College</p>
+        </footer>
+    </div>
+</body>
+</html>
