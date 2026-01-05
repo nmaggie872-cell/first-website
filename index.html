@@ -98,6 +98,17 @@
 
         footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.85rem; }
     </style>
+
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZMTG4H1GP"></script>
+     <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-LZMTG4H1GP');
+     </script>
+     
 </head>
 <body>
     <div class="glow"></div>
@@ -127,6 +138,11 @@
                 <h2>Connect</h2>
                 <p>mj.nyamdavaa@tulsacc.edu<br>406-898-8112<br>Stillwater, OK</p>
                 <a href="mailto:mj.nyamdavaa@tulsacc.edu" class="btn">Send an Email →</a>
+                <a href="resume/MJ_Nyamdavaa_Resume.pdf" 
+                   download 
+                   class="btn" 
+                   onclick="gtag('event', 'download', {'event_category': 'Resume', 'event_label': 'MJ_Nyamdavaa_Resume'});">
+                    Download Resume →</a>
             </div>
 
             <div class="card col-4">
@@ -205,7 +221,6 @@
                 <p>Maintained 99.8% POS accuracy in high-volume environments, demonstrating technical reliability.</p>
             </div>
         </main>
-
         <footer>
             <p>&copy; 2025 MJ Nyamdavaa | Expected Graduation Aug 2026 | GPA: 3.15</p>
             <p style="margin-top: 8px;">A.A.S. Computer Information Systems - Tulsa Community College</p>
