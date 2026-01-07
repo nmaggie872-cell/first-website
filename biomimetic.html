@@ -10,10 +10,9 @@
             --bg: #ffffff; 
             --card: #f9fafb; 
             --border: #e5e7eb; 
-            --accent: #4f46e5; 
-            --accent-light: white;
+            --accent: #6366f1;
             --text: #111827; 
-            --text-dim: #4b5563;
+            --text-dim: #6b7280; 
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
@@ -23,8 +22,13 @@
             color: var(--text); 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             line-height: 1.6; 
-            padding: 40px 20px; 
+            padding: 40px 20px;
+            position: relative;
+            min-height: 100vh;
         }
+        
+        /* Interactive gradient glow */
+        #gradient-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
         
         .container { max-width: 1000px; margin: 0 auto; }
         
@@ -43,13 +47,13 @@
         .badge { 
             display: inline-block; 
             padding: 4px 12px; 
-            background: var(--accent-light); 
-            border: 1px solid var(--accent); 
+            background: #eef2ff; 
+            border: 1px solid #c7d2fe; 
             border-radius: 100px; 
             color: var(--accent); 
             font-size: 0.8rem; 
             font-weight: 600; 
-            margin-bottom: 15px; 
+            margin-bottom: 15px;
         }
         
         h1 { 
@@ -159,7 +163,7 @@
         }
         
         .highlight-box {
-            background: var(--accent-light);
+            background: white;
             border-left: 4px solid var(--accent);
             padding: 20px;
             margin: 20px 0;
@@ -236,7 +240,7 @@
         }
         
         .btn-primary:hover {
-            background: #e5e7eb;
+            background: #818cf8;
         }
         
         .meta-label { 
@@ -271,9 +275,7 @@
             border-radius: 8px;
         }
         
-        .nav-btn:hover { 
-            background: var(--accent-light); 
-        }
+        .nav-btn:hover { background: var(--card); font: var(--text);}
         
         .reference-section {
             margin-top: 30px;
@@ -312,6 +314,7 @@
     </script>
 </head>
 <body>
+    <canvas id="gradient-canvas"></canvas>
     <div class="container">
         <a href="index.html" class="back-link">← Back to Portfolio</a>
         
@@ -512,7 +515,45 @@
 
     <footer>
         <p>© 2025 MJ Nyamdavaa. All rights reserved.</p>
-        <p style="margin-top: 8px;">This research concept is seeking funding and collaboration opportunities.</p>
     </footer>
+    
+    <script>
+        // Interactive gradient canvas
+        const canvas = document.getElementById('gradient-canvas');
+        const ctx = canvas.getContext('2d');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let targetX = mouseX;
+        let targetY = mouseY;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        document.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        });
+
+        function animate() {
+            mouseX += (targetX - mouseX) * 0.05;
+            mouseY += (targetY - mouseY) * 0.05;
+
+            const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 600);
+            gradient.addColorStop(0, 'rgba(99, 102, 241, 0.15)');
+            gradient.addColorStop(0.5, 'rgba(99, 102, 241, 0.05)');
+            gradient.addColorStop(1, 'rgba(99, 102, 241, 0)');
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
