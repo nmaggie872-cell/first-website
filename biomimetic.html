@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomimetic Yurt Ventilation | MJ Nyamdavaa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #ffffff; 
+            --card: #f9fafb; 
+            --border: #e5e7eb; 
+            --accent: #4f46e5; 
+            --accent-light: white;
+            --text: #111827; 
+            --text-dim: #4b5563;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+        
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            line-height: 1.6; 
+            padding: 40px 20px; 
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .back-link { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            margin-bottom: 40px; 
+            display: block; 
+            font-weight: 500; 
+        }
+        .back-link:hover { color: var(--accent); }
+        
+        .project-header { margin-bottom: 60px; }
+        
+        .badge { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            background: var(--accent-light); 
+            border: 1px solid var(--accent); 
+            border-radius: 100px; 
+            color: var(--accent); 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            margin-bottom: 15px; 
+        }
+        
+        h1 { 
+            font-size: clamp(2.5rem, 5vw, 3.5rem); 
+            letter-spacing: -0.04em; 
+            margin-bottom: 10px; 
+            font-weight: 700; 
+            color: #000; 
+        }
+        
+        .bento-grid { 
+            display: grid; 
+            grid-template-columns: repeat(12, 1fr); 
+            gap: 20px; 
+            grid-auto-flow: row dense;
+        }
+        
+        .card { 
+            background: var(--card); 
+            border: 1px solid var(--border); 
+            border-radius: 24px; 
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover { 
+            border-color: #d1d5db; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+        }
+        
+        .col-12 { grid-column: span 12; }
+        .col-8 { grid-column: span 8; }
+        .col-6 { grid-column: span 6; }
+        .col-4 { grid-column: span 4; }
+        
+        h2 { 
+            font-size: 1.1rem; 
+            margin-bottom: 16px; 
+            color: var(--text); 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            font-weight: 700; 
+        }
+        
+        h3 {
+            font-size: 1rem;
+            margin: 20px 0 12px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        p { 
+            color: var(--text-dim); 
+            font-size: 1rem; 
+            margin-bottom: 1rem; 
+        }
+        
+        ul {
+            margin-left: 20px;
+            color: var(--text-dim);
+        }
+        
+        li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .pill { 
+            display: inline-block; 
+            background: #fff; 
+            border: 1px solid var(--border); 
+            padding: 5px 12px; 
+            border-radius: 100px; 
+            font-size: 0.75rem; 
+            color: var(--text-dim); 
+            margin: 0 5px 8px 0; 
+            font-weight: 500; 
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+        
+        .highlight-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            color: var(--text);
+        }
+        
+        .phase-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .phase-number {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .phase-card h3 {
+            margin: 0;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        
+        .btn { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn:hover { 
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #e5e7eb;
+        }
+        
+        .meta-label { 
+            color: var(--accent); 
+            font-weight: 700; 
+            display: block; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            margin-bottom: 4px; 
+        }
+        
+        .meta-val { 
+            color: var(--text); 
+            font-size: 0.95rem; 
+            margin-bottom: 15px; 
+            display: block; 
+        }
+        
+        .nav-footer { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            width: 100%; 
+        }
+        
+        .nav-btn { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        
+        .nav-btn:hover { 
+            background: var(--accent-light); 
+        }
+        
+        .reference-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .reference {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 40px 0; 
+            color: var(--text-dim); 
+            font-size: 0.8rem; 
+        }
+        
+        @media (max-width: 768px) { 
+            .col-8, .col-6, .col-4 { grid-column: span 12; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZMTG4H1GP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LZMTG4H1GP');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="project-header">
+            <div class="badge">Research Concept</div>
+            <h1>Biomimetic Yurt-Lung Ventilation System</h1>
+            <p style="color: var(--text-dim); font-size: 1.2rem;">Sustainable housing innovation inspired by human respiratory systems</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Overview -->
+            <div class="card col-12">
+                <h2>Project Overview</h2>
+                <p>This research project proposes a revolutionary ventilation system for Mongolian yurts (gers) that mimics the branching structure of human lungs. Traditional yurts face a critical challenge: balancing thermal insulation with adequate airflow, especially during harsh winters where temperatures can drop to -40°F.</p>
+                
+                <p>Current solutions often prioritize insulation at the expense of air quality, leading to elevated CO₂ levels and poor ventilation. This biomimetic approach offers a third way—integrating nature-inspired ventilation channels directly into the insulation layer to maintain warmth while enabling natural airflow.</p>
+
+                <div class="highlight-box">
+                    <p><strong>The Core Innovation:</strong> Branching ventilation ducts embedded within felt insulation, utilizing temperature differentials to create passive airflow—no mechanical systems required.</p>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">2-10cm</span>
+                        <span class="stat-label">Duct Diameter Range</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">0.04</span>
+                        <span class="stat-label">W/m·K Thermal Conductivity</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1:10</span>
+                        <span class="stat-label">Prototype Scale</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Problem -->
+            <div class="card col-8">
+                <h2>The Problem</h2>
+                <p><strong>Traditional yurts struggle with ventilation-insulation tradeoff:</strong></p>
+                <ul>
+                    <li><strong>Single smoke hole design</strong> creates inadequate air circulation and significant heat loss</li>
+                    <li><strong>Cold climate performance</strong> - winters in Mongolia reach -40°F, demanding excellent insulation</li>
+                    <li><strong>Indoor air quality issues</strong> - poor ventilation leads to dangerous CO₂ accumulation</li>
+                    <li><strong>Modification dilemma</strong> - most insulation improvements reduce airflow further</li>
+                    <li><strong>Cultural preservation</strong> - solutions must respect traditional circular architecture and portability</li>
+                </ul>
+            </div>
+
+            <!-- Project Meta -->
+            <div class="card col-4">
+                <h2>Project Meta</h2>
+                <span class="meta-label">Status</span>
+                <span class="meta-val">Concept Phase</span>
+                
+                <span class="meta-label">Institution</span>
+                <span class="meta-val">Oklahoma State University</span>
+                
+                <span class="meta-label">Year</span>
+                <span class="meta-val">2024-2025</span>
+                
+                <span class="meta-label">Researcher</span>
+                <span class="meta-val">MJ Nyamdavaa</span>
+
+                <h2 style="margin-top: 24px;">Keywords</h2>
+                <div style="margin-top: 10px;">
+                    <span class="pill">Biomimicry</span>
+                    <span class="pill">CFD Analysis</span>
+                    <span class="pill">ANSYS Fluent</span>
+                    <span class="pill">Sustainable Design</span>
+                    <span class="pill">Traditional Architecture</span>
+                    <span class="pill">Passive Ventilation</span>
+                </div>
+            </div>
+
+            <!-- Biomimetic Inspiration -->
+            <div class="card col-12">
+                <h2>Biomimetic Inspiration: The Human Lung</h2>
+                <p>The human respiratory system efficiently exchanges gases through a branching network of airways that maximize surface area while minimizing flow resistance. This project translates that biological principle into architectural form.</p>
+                
+                <h3>Key Biological Principles Applied:</h3>
+                <ul>
+                    <li><strong>Hierarchical branching</strong> - Ducts split at optimized angles to reduce airflow resistance</li>
+                    <li><strong>Surface area maximization</strong> - Multiple pathways distribute airflow evenly</li>
+                    <li><strong>Passive operation</strong> - Natural convection drives air movement, similar to pressure differentials in lungs</li>
+                    <li><strong>Adaptive geometry</strong> - Duct sizing varies to balance flow velocity and volume</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Operational Principle:</strong> Temperature differential between warm interior air and cold exterior air creates natural convective flow through the branching duct network, continuously exchanging air while minimizing heat loss.</p>
+                </div>
+            </div>
+
+            <!-- Proposed Design -->
+            <div class="card col-6">
+                <h2>Proposed Design</h2>
+                <h3>System Architecture:</h3>
+                <ul>
+                    <li><strong>Materials:</strong> Lightweight, frost-resistant PVC ducts embedded in traditional felt and wool insulation</li>
+                    <li><strong>Duct network:</strong> Branching configuration inspired by bronchial tree structure</li>
+                    <li><strong>Thermal performance:</strong> Insulation maintains low thermal conductivity (0.04 W/m·K)</li>
+                    <li><strong>Adjustable layers:</strong> Modular felt/wool system allows climate customization</li>
+                    <li><strong>Cultural integrity:</strong> Preserves traditional circular yurt form and conical roof geometry</li>
+                    <li><strong>No mechanical systems:</strong> Entirely passive operation—no electricity required</li>
+                </ul>
+            </div>
+
+            <!-- Research Methodology -->
+            <div class="card col-6">
+                <h2>Research Methodology</h2>
+                
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">1</div>
+                        <h3>CFD Modeling (ANSYS Fluent)</h3>
+                    </div>
+                    <p>Compare traditional yurt airflow with biomimetic design through computational fluid dynamics analysis</p>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">2</div>
+                        <h3>Physical Prototype Testing</h3>
+                    </div>
+                    <p>Build 1:10 scale model with 3D-printed channels and traditional felt insulation</p>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">3</div>
+                        <h3>Design Strategy Development</h3>
+                    </div>
+                    <p>Translate findings into practical implementation guidelines for full-scale construction</p>
+                </div>
+            </div>
+
+            <!-- Expected Outcomes -->
+            <div class="card col-8">
+                <h2>Expected Outcomes & Impact</h2>
+                
+                <h3>Technical Contributions:</h3>
+                <ul>
+                    <li>Validated design framework for integrating biomimetic ventilation in traditional structures</li>
+                    <li>Quantified performance metrics comparing passive ventilation efficiency to traditional methods</li>
+                    <li>Replicable methodology for applying respiratory-inspired design to other architectural contexts</li>
+                </ul>
+
+                <h3>Broader Impact:</h3>
+                <ul>
+                    <li><strong>Cultural preservation:</strong> Enables continued use of traditional yurts with modern comfort standards</li>
+                    <li><strong>Global housing crisis:</strong> Principles applicable to portable, temporary, and emergency housing worldwide</li>
+                    <li><strong>Climate resilience:</strong> Passive systems reduce energy dependence in extreme climates</li>
+                    <li><strong>Sustainable development:</strong> Demonstrates how traditional knowledge + biomimicry can address modern challenges</li>
+                </ul>
+            </div>
+
+            <!-- CTA / Documents -->
+            <div class="card col-4">
+                <h2>Learn More</h2>
+                <p>Read the full research proposal for detailed methodology, technical specifications, and theoretical framework.</p>
+                
+                <div class="btn-group" style="flex-direction: column;">
+                    <a href="resume/Proposal_MJ_Nyamdavaa.pdf" target="_blank" class="btn btn-primary" onclick="gtag('event', 'view_proposal', {'event_category': 'Research', 'event_label': 'Yurt Proposal'});">
+                        View Full Proposal →
+                    </a>
+                    <a href="resume/Proposal_MJ_Nyamdavaa.pdf" download class="btn" onclick="gtag('event', 'download', {'event_category': 'Research', 'event_label': 'Yurt Proposal PDF'});">
+                        Download PDF →
+                    </a>
+                </div>
+            </div>
+
+            <!-- References -->
+            <div class="card col-12">
+                <h2>References</h2>
+                <div class="reference-section">
+                    <p class="reference">[1] Hussein, E. A., & Abbood, O. A. (2024). Biomimicry as a sustainable solution in architecture. <em>BIO Web of Conferences</em>, 97, 00015.</p>
+                    
+                    <p class="reference">[2] Kisilewicz, T., Kłos, J., & Sobczyk, J. (2021). Energy efficiency of yurts. <em>Energies</em>, 14(24), 8544.</p>
+                    
+                    <p class="reference">[3] Badrou, A., Mariano, C. A., Ramirez, G. O., Shankel, M., Rebelo, N., & Eskandari, M. (2025). Towards constructing a generalized structural 3D breathing human lung model based on experimental volumes, pressures, and strains. <em>PLoS Computational Biology</em>, 21(1), e1012680.</p>
+                    
+                    <p class="reference">[4] Silk Road Yurts. (2023). What is a yurt? Retrieved from https://silkroadyurts.com/what-is-yurt/</p>
+                    
+                    <p class="reference">[5] Reid, M. (2020). Tracheobronchiole tree. Association of Medical Illustrators.</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="card col-12">
+                <div class="nav-footer">
+                    <a href="index.html" class="nav-btn">← Back to Portfolio</a>
+                    <a href="mailto:mj.nyamdavaa@tulsacc.edu?subject=Yurt Ventilation Research Inquiry" class="nav-btn">Contact About Project →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 MJ Nyamdavaa. All rights reserved.</p>
+        <p style="margin-top: 8px;">This research concept is seeking funding and collaboration opportunities.</p>
+    </footer>
+</body>
+</html>
