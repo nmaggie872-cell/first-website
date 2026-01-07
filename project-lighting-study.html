@@ -10,21 +10,60 @@
             --bg: #ffffff; 
             --card: #f9fafb; 
             --border: #e5e7eb; 
-            --accent: #4f46e5; 
+            --accent: #6366f1; 
             --text: #111827; 
             --text-dim: #4b5563; 
         }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
-        body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; padding: 40px 20px; }
+        
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            line-height: 1.6; 
+            padding: 40px 20px;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Interactive gradient glow */
+        #gradient-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+        
         .container { max-width: 1000px; margin: 0 auto; }
-        .back-link { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; margin-bottom: 40px; display: block; font-weight: 500; }
+        
+        .back-link { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            margin-bottom: 40px; 
+            display: block; 
+            font-weight: 500; 
+        }
         .back-link:hover { color: var(--accent); }
         
         .project-header { margin-bottom: 60px; }
-        .badge { display: inline-block; padding: 4px 12px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 100px; color: var(--accent); font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; }
-        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); letter-spacing: -0.04em; margin-bottom: 10px; font-weight: 700; color: #000; }
         
-        /* THE FIX: Ensure grid stretches properly */
+        .badge { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            background: #eef2ff; 
+            border: 1px solid #c7d2fe; 
+            border-radius: 100px; 
+            color: var(--accent); 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            margin-bottom: 15px; 
+        }
+        
+        h1 { 
+            font-size: clamp(2.5rem, 5vw, 3.5rem); 
+            letter-spacing: -0.04em; 
+            margin-bottom: 10px; 
+            font-weight: 700; 
+            color: #000; 
+        }
+        
         .bento-grid { 
             display: grid; 
             grid-template-columns: repeat(12, 1fr); 
@@ -39,25 +78,75 @@
             padding: 32px;
             display: flex;
             flex-direction: column;
-        
         }
-        .card:hover { border-color: #d1d5db; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        
+        .card:hover { 
+            border-color: #d1d5db; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+        }
         
         .col-12 { grid-column: span 12; }
         .col-8 { grid-column: span 8; }
         .col-4 { grid-column: span 4; }
 
-        .hero-img { width: 100%; border-radius: 20px; margin-bottom: 24px; border: 1px solid var(--border); background: #eee; }
-        h2 { font-size: 1.1rem; margin-bottom: 16px; color: var(--text); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
-        p { color: var(--text-dim); font-size: 1rem; margin-bottom: 1rem; }
+        .hero-img { 
+            width: 100%; 
+            border-radius: 20px; 
+            margin-bottom: 24px; 
+            border: 1px solid var(--border); 
+            background: #eee; 
+        }
         
-        .pill { display: inline-block; background: #fff; border: 1px solid var(--border); padding: 5px 12px; border-radius: 100px; font-size: 0.75rem; color: var(--text-dim); margin: 0 5px 8px 0; font-weight: 500; }
+        h2 { 
+            font-size: 1.1rem; 
+            margin-bottom: 16px; 
+            color: var(--text); 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            font-weight: 700; 
+        }
         
-        .meta-label { color: var(--accent); font-weight: 700; display: block; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; }
-        .meta-val { color: var(--text); font-size: 0.95rem; margin-bottom: 15px; display: block; }
+        p { 
+            color: var(--text-dim); 
+            font-size: 1rem; 
+            margin-bottom: 1rem; 
+        }
+        
+        .pill { 
+            display: inline-block; 
+            background: #fff; 
+            border: 1px solid var(--border); 
+            padding: 5px 12px; 
+            border-radius: 100px; 
+            font-size: 0.75rem; 
+            color: var(--text-dim); 
+            margin: 0 5px 8px 0; 
+            font-weight: 500; 
+        }
+        
+        .meta-label { 
+            color: var(--accent); 
+            font-weight: 700; 
+            display: block; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            margin-bottom: 4px; 
+        }
+        
+        .meta-val { 
+            color: var(--text); 
+            font-size: 0.95rem; 
+            margin-bottom: 15px; 
+            display: block; 
+        }
 
-        /* THE FIX: Navigation Button Styles */
-        .nav-footer { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .nav-footer { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            width: 100%; 
+        }
+        
         .nav-btn { 
             color: var(--accent); 
             text-decoration: none; 
@@ -66,23 +155,34 @@
             padding: 8px 16px;
             border-radius: 8px;
         }
-        .nav-btn:hover { background: #eef2ff; }
+        
+        .nav-btn:hover { background: var(--card); font: var(--text);}
+        
+        footer { 
+            text-align: center; 
+            padding: 40px 0; 
+            color: var(--text-dim); 
+            font-size: 0.8rem; 
+        }
 
-        @media (max-width: 768px) { .col-8, .col-4 { grid-column: span 12; } }
+        @media (max-width: 768px) { 
+            .col-8, .col-4 { grid-column: span 12; } 
+        }
     </style>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZMTG4H1GP"></script>
-     <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-
-     gtag('config', 'G-LZMTG4H1GP');
-     </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZMTG4H1GP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LZMTG4H1GP');
+    </script>
 </head>
 <body>
+    <canvas id="gradient-canvas"></canvas>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <a href="job-application-site.html" class="back-link">← Back to Portfolio</a>
         
         <div class="project-header">
             <div class="badge">Academic Project - ARCH 1216</div>
@@ -101,10 +201,9 @@
 
             <div class="card col-8">
                 <h2>Design Concept</h2>
-                <p>My concept centered on three defining words from the dystopian condition: Robotic, Immersive, and Stormy. These qualities guided every design decision, from the angular structural elements to the dramatic lighting effects that create stark contrasts between illuminated passages and shadowed spaces.<p>    
+                <p>My concept centered on three defining words from the dystopian condition: Robotic, Immersive, and Stormy. These qualities guided every design decision, from the angular structural elements to the dramatic lighting effects that create stark contrasts between illuminated passages and shadowed spaces.</p>    
                 <p>The bridge embodies tension between control and movement—rigid geometric forms are punctuated by dynamic lighting that suggests hope and possibility within a constrained urban environment. The red illumination serves as both warning and beacon, a narrative element that speaks to the emotional experience of crossing borders in uncertain times.</p>    
             </div>
-
 
             <div class="card col-4">
                 <h2>Project Meta</h2>
@@ -122,7 +221,7 @@
                     <span class="pill">Physical Modeling</span>
                     <span class="pill">Structural Logic</span>
                     <span class="pill">Basswood Construction</span>
-                    <span class="pill">Spacial Composition</span>
+                    <span class="pill">Spatial Composition</span>
                     <span class="pill">Lighting Design</span>
                     <span class="pill">Conceptual Development</span>
                     <span class="pill">Architectural Photography</span>
@@ -149,8 +248,47 @@
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 0.8rem;">
-        <p>&copy; 2025 MJ Nyamdavaa. All rights reserved.</p>
+    <footer>
+        <p>© 2025 MJ Nyamdavaa. All rights reserved.</p>
     </footer>
+    
+    <script>
+        // Interactive gradient canvas
+        const canvas = document.getElementById('gradient-canvas');
+        const ctx = canvas.getContext('2d');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let targetX = mouseX;
+        let targetY = mouseY;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        document.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        });
+
+        function animate() {
+            mouseX += (targetX - mouseX) * 0.05;
+            mouseY += (targetY - mouseY) * 0.05;
+
+            const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 600);
+            gradient.addColorStop(0, 'rgba(99, 102, 241, 0.15)');
+            gradient.addColorStop(0.5, 'rgba(99, 102, 241, 0.05)');
+            gradient.addColorStop(1, 'rgba(99, 102, 241, 0)');
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
