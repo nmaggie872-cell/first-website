@@ -275,7 +275,10 @@
             border-radius: 8px;
         }
         
-        .nav-btn:hover { background: var(--card); font: var(--text);}
+        .nav-btn:hover { 
+            background: var(--card); 
+            color: var(--text);
+        }
         
         .reference-section {
             margin-top: 30px;
@@ -319,35 +322,32 @@
         <a href="index.html" class="back-link">← Back to Portfolio</a>
         
         <div class="project-header">
-            <div class="badge">Research Concept</div>
+            <div class="badge">Technical Research & Computational Design</div>
             <h1>Biomimetic Yurt-Lung Ventilation System</h1>
-            <p style="color: var(--text-dim); font-size: 1.2rem;">Sustainable housing innovation inspired by human respiratory systems</p>
-        </div>
+            <p style="color: var(--text-dim); font-size: 1.2rem;">Exploring biomimetic passive ventilation through systems design and computational airflow analysis</p>
 
         <div class="bento-grid">
             <!-- Overview -->
             <div class="card col-12">
                 <h2>Project Overview</h2>
-                <p>This research project proposes a revolutionary ventilation system for Mongolian yurts (gers) that mimics the branching structure of human lungs. Traditional yurts face a critical challenge: balancing thermal insulation with adequate airflow, especially during harsh winters where temperatures can drop to -40°F.</p>
+                <p>This research project explores a biomimetic ventilation system for Mongolian yurts (gers) inspired by the branching structure of human lungs. The design investigates the challenge of maintaining thermal insulation while providing adequate airflow in Mongolia's extreme winter climate.</p>
                 
-                <p>Current solutions often prioritize insulation at the expense of air quality, leading to elevated CO₂ levels and poor ventilation. This biomimetic approach offers a third way—integrating nature-inspired ventilation channels directly into the insulation layer to maintain warmth while enabling natural airflow.</p>
-
-                <div class="highlight-box">
-                    <p><strong>The Core Innovation:</strong> Branching ventilation ducts embedded within felt insulation, utilizing temperature differentials to create passive airflow—no mechanical systems required.</p>
-                </div>
+                <p>The proposed approach integrates branching ventilation channels within the insulation layer to investigate whether passive airflow can be improved without substantially compromising thermal performance.</p>
+                    <p><strong>Design Hypothesis:</strong> A branching duct network embedded within traditional insulation could use thermal buoyancy to support passive air exchange while limiting the heat loss associated with large ventilation openings.</p>
+                <div>
 
                 <div class="stat-grid">
                     <div class="stat-card">
                         <span class="stat-number">2-10cm</span>
-                        <span class="stat-label">Duct Diameter Range</span>
+                        <span class="stat-label">Proposed Duct Diameter Range</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">0.04</span>
-                        <span class="stat-label">W/m·K Thermal Conductivity</span>
+                        <span class="stat-label">W/m·K Reference Insulation Conductivity</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">1:10</span>
-                        <span class="stat-label">Prototype Scale</span>
+                        <span class="stat-label">Proposed Prototype Scale</span>
                     </div>
                 </div>
             </div>
@@ -359,7 +359,7 @@
                 <ul>
                     <li><strong>Single smoke hole design</strong> creates inadequate air circulation and significant heat loss</li>
                     <li><strong>Cold climate performance</strong> - winters in Mongolia reach -40°F, demanding excellent insulation</li>
-                    <li><strong>Indoor air quality issues</strong> - poor ventilation leads to dangerous CO₂ accumulation</li>
+                    <li><strong>Indoor air quality</strong> - limited air exchange can contribute to elevated indoor CO₂ concentrations and reduced ventilation effectiveness</li>
                     <li><strong>Modification dilemma</strong> - most insulation improvements reduce airflow further</li>
                     <li><strong>Cultural preservation</strong> - solutions must respect traditional circular architecture and portability</li>
                 </ul>
@@ -369,7 +369,7 @@
             <div class="card col-4">
                 <h2>Project Meta</h2>
                 <span class="meta-label">Status</span>
-                <span class="meta-val">Concept Phase</span>
+                <span class="meta-val">Research & Computational Concept Study</span>
                 
                 <span class="meta-label">Institution</span>
                 <span class="meta-val">Oklahoma State University</span>
@@ -382,30 +382,30 @@
 
                 <h2 style="margin-top: 24px;">Keywords</h2>
                 <div style="margin-top: 10px;">
-                    <span class="pill">Biomimicry</span>
-                    <span class="pill">CFD Analysis</span>
                     <span class="pill">ANSYS Fluent</span>
-                    <span class="pill">Sustainable Design</span>
-                    <span class="pill">Traditional Architecture</span>
+                    <span class="pill">CFD Analysis</span>
+                    <span class="pill">Biomimicry</span>
                     <span class="pill">Passive Ventilation</span>
+                    <span class="pill">Systems Design</span>
+                    <span class="pill">Computational Analysis</span>
                 </div>
             </div>
 
             <!-- Biomimetic Inspiration -->
             <div class="card col-12">
                 <h2>Biomimetic Inspiration: The Human Lung</h2>
-                <p>The human respiratory system efficiently exchanges gases through a branching network of airways that maximize surface area while minimizing flow resistance. This project translates that biological principle into architectural form.</p>
+                <p>The human respiratory system uses a hierarchical branching network to distribute airflow across progressively smaller pathways. This project investigates how that branching logic can inform the organization of passive ventilation channels within a building envelope.</p>
                 
                 <h3>Key Biological Principles Applied:</h3>
                 <ul>
-                    <li><strong>Hierarchical branching</strong> - Ducts split at optimized angles to reduce airflow resistance</li>
-                    <li><strong>Surface area maximization</strong> - Multiple pathways distribute airflow evenly</li>
-                    <li><strong>Passive operation</strong> - Natural convection drives air movement, similar to pressure differentials in lungs</li>
+                    <li><strong>Hierarchical branching</strong> - Airflow is distributed through progressively smaller ventilation pathways</li>
+                    <li><strong>Distributed airflow</strong> - Multiple branches provide alternative pathways for air movement throughout the enclosure</li>
+                    <li><strong>Passive operation</strong> - Thermal buoyancy and indoor-outdoor pressure differences provide the proposed driving forces for airflow</li>
                     <li><strong>Adaptive geometry</strong> - Duct sizing varies to balance flow velocity and volume</li>
                 </ul>
 
                 <div class="highlight-box">
-                    <p><strong>Operational Principle:</strong> Temperature differential between warm interior air and cold exterior air creates natural convective flow through the branching duct network, continuously exchanging air while minimizing heat loss.</p>
+                    <p><strong>Operational Principle:</strong> The system is designed to use indoor-outdoor temperature and pressure differences to promote airflow through the branching network while reducing reliance on a single large ventilation opening.</p>
                 </div>
             </div>
 
@@ -414,9 +414,9 @@
                 <h2>Proposed Design</h2>
                 <h3>System Architecture:</h3>
                 <ul>
-                    <li><strong>Materials:</strong> Lightweight, frost-resistant PVC ducts embedded in traditional felt and wool insulation</li>
+                    <li><strong>Candidate materials:</strong> Lightweight duct channels integrated with traditional felt and wool insulation</li>
                     <li><strong>Duct network:</strong> Branching configuration inspired by bronchial tree structure</li>
-                    <li><strong>Thermal performance:</strong> Insulation maintains low thermal conductivity (0.04 W/m·K)</li>
+                    <li><strong>Thermal consideration:</strong> The design uses a reference insulation conductivity of approximately 0.04 W/m·K for evaluating heat-transfer behavior</li>
                     <li><strong>Adjustable layers:</strong> Modular felt/wool system allows climate customization</li>
                     <li><strong>Cultural integrity:</strong> Preserves traditional circular yurt form and conical roof geometry</li>
                     <li><strong>No mechanical systems:</strong> Entirely passive operation—no electricity required</li>
@@ -454,19 +454,19 @@
 
             <!-- Expected Outcomes -->
             <div class="card col-8">
-                <h2>Expected Outcomes & Impact</h2>
+                <h2>Potential Contributions & Future Work</h2>
                 
                 <h3>Technical Contributions:</h3>
                 <ul>
-                    <li>Validated design framework for integrating biomimetic ventilation in traditional structures</li>
-                    <li>Quantified performance metrics comparing passive ventilation efficiency to traditional methods</li>
-                    <li>Replicable methodology for applying respiratory-inspired design to other architectural contexts</li>
+                    <li>Evaluate whether branching ventilation geometry can improve airflow distribution in traditionally insulated structures</li>
+                    <li>Compare airflow and thermal behavior between conventional and biomimetic ventilation configurations</li>
+                    <li>Establish a methodology for future prototype validation and design refinement</li>
                 </ul>
 
                 <h3>Broader Impact:</h3>
                 <ul>
                     <li><strong>Cultural preservation:</strong> Enables continued use of traditional yurts with modern comfort standards</li>
-                    <li><strong>Global housing crisis:</strong> Principles applicable to portable, temporary, and emergency housing worldwide</li>
+                    <li><strong>Transferability:</strong> The design approach may inform future research on passive ventilation in portable and lightweight structures</li>
                     <li><strong>Climate resilience:</strong> Passive systems reduce energy dependence in extreme climates</li>
                     <li><strong>Sustainable development:</strong> Demonstrates how traditional knowledge + biomimicry can address modern challenges</li>
                 </ul>
@@ -514,7 +514,7 @@
     </div>
 
     <footer>
-        <p>© 2025 MJ Nyamdavaa. All rights reserved.</p>
+        <p>© 2026 MJ Nyamdavaa. All rights reserved.</p>
     </footer>
     
     <script>
